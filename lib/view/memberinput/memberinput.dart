@@ -18,7 +18,7 @@ class MemberInput extends StatelessWidget {
             Padding(
               padding: EdgeInsets.only(top: 200, left: 50, right: 50),
               child: Text(
-                'PLease enter your meal member name',
+                'PLease enter your meal member',
                 style: TextStyle(
                     fontSize: 18,
                     fontStyle: FontStyle.italic,
