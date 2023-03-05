@@ -1,6 +1,6 @@
 # dayly_calculation
 
-A new Flutter project.
+A new Flutter Daily Meal Calculation.
 
 ## Getting Started
 
