@@ -12,7 +12,13 @@ class MemberInput extends StatefulWidget {
 }
 
 class _MemberInputState extends State<MemberInput> {
-  final nameFieldcontroller = TextEditingController();
+  List nameFieldController = [];
+  void generateTextController() {
+    TextEditingController controllerText = TextEditingController();
+    setState(() {
+      nameFieldController.add(controllerText);
+    });
+  }
 
   int number = 1;
 
@@ -41,10 +47,10 @@ class _MemberInputState extends State<MemberInput> {
                     textAlign: TextAlign.center,
                   ),
                 ),
-                const SizedBox(height: 20),
                 Expanded(
                   child: ListView.builder(
                     shrinkWrap: true,
+                    itemCount: nameFieldController.length,
                     itemBuilder: ((context, index) {
                       return Padding(
                         padding: const EdgeInsets.only(left: 20),
@@ -60,7 +66,7 @@ class _MemberInputState extends State<MemberInput> {
                                   baseColor: Colors.black,
                                   borderColor: const Color.fromRGBO(
                                       255, 255, 255, 0.702),
-                                  controller: nameFieldcontroller,
+                                  controller: nameFieldController[index],
                                   errorColor: Colors.red,
                                   hint: 'ex : John',
                                   inputType: TextInputType.name,
@@ -70,17 +76,7 @@ class _MemberInputState extends State<MemberInput> {
                               IconButton(
                                   onPressed: () {
                                     setState(() {
-                                      number = number + 1;
-                                    });
-                                  },
-                                  icon: const Icon(
-                                    Icons.add,
-                                    size: 15,
-                                  )),
-                              IconButton(
-                                  onPressed: () {
-                                    setState(() {
-                                      number = number - 1;
+                                      nameFieldController.removeAt(index);
                                     });
                                   },
                                   icon: const Icon(
@@ -90,25 +86,37 @@ class _MemberInputState extends State<MemberInput> {
                             ]),
                       );
                     }),
-                    itemCount: number,
                   ),
                 ),
-
-                ///text field
-
-                //button here
                 Padding(
-                  padding: const EdgeInsets.only(top: 160),
-                  child: ElevatedButton(
-                    style: buttonstyles,
-                    onPressed: () => Get.to(MemberInput()),
-                    child: Image.asset(
-                      'assets/icons/check.png',
-                      height: 50,
-                      width: 50,
-                    ),
+                  padding: const EdgeInsets.only(bottom: 110),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    // crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      ElevatedButton(
+                          style: buttonstyles,
+                          // ignore: avoid_print
+                          onPressed: () => generateTextController(),
+                          child: const Icon(
+                            Icons.add_circle,
+                            size: 60,
+                            color: Color.fromARGB(255, 37, 244, 61),
+                          )),
+                      ElevatedButton(
+                        style: buttonstyles,
+                        // ignore: avoid_print
+                        onPressed: () => print("Clicked"),
+                        child: Image.asset(
+                          'assets/icons/check.png',
+                          height: 50,
+                          width: 50,
+                        ),
+                      ),
+                    ],
                   ),
                 ),
+                //button here
               ]),
         ));
   }
