@@ -3,6 +3,7 @@ import 'package:get/get.dart';
 
 import '../../controler/buttonwid/mybutton.dart';
 import '../../controler/textfieldwid/customtextfield.dart';
+import '../takenmeal/takenmeal.dart';
 
 class MemberInput extends StatefulWidget {
   const MemberInput({super.key});
@@ -80,8 +81,8 @@ class _MemberInputState extends State<MemberInput> {
                                     });
                                   },
                                   icon: const Icon(
-                                    Icons.remove,
-                                    size: 15,
+                                    Icons.cancel_rounded,
+                                    size: 30,
                                   ))
                             ]),
                       );
@@ -89,7 +90,7 @@ class _MemberInputState extends State<MemberInput> {
                   ),
                 ),
                 Padding(
-                  padding: const EdgeInsets.only(bottom: 110),
+                  padding: const EdgeInsets.only(bottom: 115),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     // crossAxisAlignment: CrossAxisAlignment.start,
@@ -104,15 +105,14 @@ class _MemberInputState extends State<MemberInput> {
                             color: Color.fromARGB(255, 37, 244, 61),
                           )),
                       ElevatedButton(
-                        style: buttonstyles,
-                        // ignore: avoid_print
-                        onPressed: () => print("Clicked"),
-                        child: Image.asset(
-                          'assets/icons/check.png',
-                          height: 50,
-                          width: 50,
-                        ),
-                      ),
+                          style: buttonstyles,
+                          // ignore: avoid_print
+                          onPressed: () => Get.to(const TakenMeal()) ,
+                          child: const Icon(
+                            Icons.check_circle,
+                            color: Color.fromARGB(255, 43, 148, 240),
+                            size: 60,
+                          )),
                     ],
                   ),
                 ),
