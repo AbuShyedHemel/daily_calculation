@@ -1,8 +1,7 @@
-import 'package:dayly_calculation/view/homepage/homepage.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get_navigation/get_navigation.dart';
 
-import 'view/memberinput/memberinput.dart';
+import 'view/homepage/memberinput.dart';
 
 void main() => runApp(const MyWidget());
 
