@@ -43,10 +43,18 @@ class _MemberInputState extends State<MemberInput> {
                     'PLease enter your meal member names',
                     style: TextStyle(
                         fontSize: 18,
-                        fontStyle: FontStyle.italic,
+                        fontStyle: FontStyle.normal,
                         fontWeight: FontWeight.bold),
                     textAlign: TextAlign.center,
                   ),
+                ),
+                const Text(
+                  'Click on (+) To add your meal members',
+                  style: TextStyle(
+                      fontSize: 12,
+                      fontStyle: FontStyle.normal,
+                      fontWeight: FontWeight.bold),
+                  textAlign: TextAlign.center,
                 ),
                 Expanded(
                   child: ListView.builder(
@@ -107,7 +115,7 @@ class _MemberInputState extends State<MemberInput> {
                       ElevatedButton(
                           style: buttonstyles,
                           // ignore: avoid_print
-                          onPressed: () => Get.to(const TakenMeal()) ,
+                          onPressed: () => Get.to(const TakenMeal()),
                           child: const Icon(
                             Icons.check_circle,
                             color: Color.fromARGB(255, 43, 148, 240),

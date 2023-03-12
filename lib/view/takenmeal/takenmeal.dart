@@ -11,13 +11,13 @@ class TakenMeal extends StatefulWidget {
 }
 
 class _TakenMealState extends State<TakenMeal> {
-  List nameFieldController = [];
-  void generateTextController() {
-    TextEditingController controllerText = TextEditingController();
-    setState(() {
-      nameFieldController.add(controllerText);
-    });
-  }
+  List nameFieldController = [4];
+  // void generateTextController() {
+  //   TextEditingController controllerText = TextEditingController();
+  //   setState(() {
+  //     nameFieldController.add(controllerText);
+  //   });
+  // }
 
   @override
   Widget build(BuildContext context) {
@@ -35,7 +35,7 @@ class _TakenMealState extends State<TakenMeal> {
                 const Padding(
                   padding: EdgeInsets.only(top: 200, left: 50, right: 50),
                   child: Text(
-                    'PLease enter your meal member names',
+                    'PLease enter meals on The Members Board',
                     style: TextStyle(
                         fontSize: 18,
                         fontStyle: FontStyle.italic,
